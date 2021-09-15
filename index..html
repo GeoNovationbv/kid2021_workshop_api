@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+
+    <title>Workshop KaartViewer API</title>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-light bg-white">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://kid2021.kaartviewer.nl/img/geonovation.png" class="d-inline-block align-top" alt="" width="200">
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12">
+                <table class="table" id="table">
+                    <thead>
+                        <tr>
+                            <th>Feature ID</th>
+                            <th>Projectnaam</th>
+                            <th>Website</th>
+                        </tr>
+                    </thead>
+                    <tbody style="cursor:pointer;height: 500px">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-presentation-title">Feature gegevens</h5>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <h5 id="modal-form-title"></h5>
+                    <table class="table" id="modal-table">
+                        <thead>
+                            <tr>
+                                <th>Weergavenaam</th>
+                                <th>Waarde</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <h5 id="modal-form-title-linked"></h5>
+                    <table class="table" id="modal-table-linked">
+                        <thead>
+                        <tr>
+                            <th>Weergavenaam</th>
+                            <th>Waarde</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <h5 id="modal-form-title-linked-geometry"></h5>
+                    <table class="table" id="modal-table-linked-geometry">
+                        <thead>
+                        <tr>
+                            <th>Weergavenaam</th>
+                            <th>Waarde</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Sluiten</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery js -->
+    <script src="assets/libs/jquery/js/jquery.min.js"></script>
+
+    <!-- Bootstrap js -->
+    <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Workshop-->
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/opdracht1.js"></script>
+    <script src="assets/js/opdracht2.js"></script>
+    <script src="assets/js/opdracht3.js"></script>
+</body>
+</html>
