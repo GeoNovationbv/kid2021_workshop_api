@@ -1,5 +1,8 @@
-$( document ).ready(function() {
-    // Opdracht 1
+$(document).ready(function() {
+    /**
+     * Opdracht 1
+     */
+
 
     // URL van API 1
     var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/108/domain/5/presentation/528/info?maxFeatures=10'
@@ -54,59 +57,11 @@ $( document ).ready(function() {
                 });
             });
 
-            // Opdracht 2 (Dit zouden we kunenn verplaatsen na opdracht2.js en dan dit in een functie maken)
+            //Opdracht 2 (zie opdracht2.js)
+            opdracht2(resultaat)
 
-            // Formulier info gekoppeld
-            var featureInfoLinked = resultaat.mainTabs[0].features[0].featureInfo[1];
-
-            // Checken of er een gekopeld formulier is toegevoegd
-            if(featureInfoLinked !== undefined) {
-                // Titel van de gekopelde formulier zetten
-                $('#modal-form-title-linked').html(featureInfoLinked.FormName)
-
-                // Tabel gekoppeld leeg maken
-                $('#modal-table-linked tbody').html('')
-
-                // Checken of er gekopelde gegevens zijn
-                if (featureInfoLinked.records.length > 0) {
-                    featureInfoLinked.records[0].attributes.map(function (attributes) {
-                        attributes.map(function (attribute) {
-                            // De regels aan de tabel toevoegen
-                            $('#modal-table-linked tbody').append('<tr><td>' + attribute.DisplayName + '</td><td>' + attribute.Value + '</td></tr')
-                        });
-                    });
-                } else {
-                    // Als er geen gekopelde data is gevonden dit tonen in de tabel
-                    $('#modal-table-linked tbody').html('Geen data gevonden.')
-                }
-            }
-
-            // Opdracht 3 (Dit zouden we kunenn verplaatsen na opdracht2.js en dan dit in een functie maken)
-
-            // Formulier info geometry
-            var featureInfoLinkedGeometry = resultaat.mainTabs[0].features[0].featureInfo[2];
-            // Checken of er een gekopeld formulier is toegevoegd
-            if(featureInfoLinkedGeometry !== undefined) {
-
-                // Titel van de gekopelde formulier zetten
-                $('#modal-form-title-linked-geometry').html(featureInfoLinkedGeometry.FormName)
-
-                // Tabel gekoppeld leeg maken
-                $('#modal-table-linked-geometry tbody').html('')
-
-                // Checken of er gekopelde gegevens zijn
-                if (featureInfoLinkedGeometry.records.length > 0) {
-                    featureInfoLinkedGeometry.records[0].attributes.map(function (attributes) {
-                        attributes.map(function (attribute) {
-                            // De regels aan de tabel toevoegen
-                            $('#modal-table-linked-geometry tbody').append('<tr><td>' + attribute.DisplayName + '</td><td>' + attribute.Value + '</td></tr')
-                        });
-                    });
-                } else {
-                    // Als er geen gekopelde data is gevonden dit tonen in de tabel
-                    $('#modal-table-linked-geometry tbody').html('Geen data gevonden.')
-                }
-            }
+            //Opdracht 3 (zie opdracht3.js)
+            opdracht3(resultaat)
 
             // De modal tonen
             $('#modal').modal('show')
