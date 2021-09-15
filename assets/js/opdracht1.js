@@ -5,6 +5,9 @@ $( document ).ready(function() {
     var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/108/domain/5/presentation/528/info?maxFeatures=10'
     // De data via de url ophalen
     $.get( url, function( resultaat ) {
+
+        // Het resultaat bestaat uit een featureCollection
+
         // Door alle resultaten heen gaan
         resultaat.features.map(function(feature) {
             // De regels aan de tabel toevoegen
@@ -20,6 +23,16 @@ $( document ).ready(function() {
         var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/108/domain/5/presentation/528/info/'
         // De data via de url ophalen
         $.get( url + id, function( resultaat ) {
+
+            /**
+             * Het resultaat bestaat uit de API die ook in KaartViewer wordt gebruikt
+             * 1.  mainTabs: de presentaties die zijn geopend. Voor een WFS is dit altijd 1
+             * 2.  features: de features die zijn gevonden. Voor een WFS is dit altijd 1. Voor WMS kunnen dit er meer zijn als je meer vlakken tegelijk openend
+             * 3.1 feature: de feature ID en de geometry
+             * 3.2 featureInfo: de formulieren die zijn gekopeld aan de presentatie
+             * 4.  records: de (gekopelde) records die zijn gevonden. Voor een formulier van dezelfde presentatie is dit er altijd 1. Voor gekopelde data kan dit 1 of meer zijn
+             * 5.  attributes: de attributen die in het formulier zitten. In de attributen zit nog 1 extra diepte om ze achter elkaar te zetten.
+             */
 
             // Titel presentatie
             $('#modal-presentation-title').html(resultaat.mainTabs[0].Name)
