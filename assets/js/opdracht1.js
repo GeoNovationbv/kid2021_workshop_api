@@ -3,7 +3,6 @@ $(document).ready(function() {
      * Opdracht 1
      */
 
-
     // URL van API 1
     var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/109/domain/5/presentation/535/info?maxFeatures=10'
     // De data via de url ophalen
