@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 
     // URL van API 1
-    var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/108/domain/5/presentation/528/info?maxFeatures=10'
+    var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/109/domain/5/presentation/535/info?maxFeatures=10'
     // De data via de url ophalen
     $.get( url, function( resultaat ) {
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
         // Door alle resultaten heen gaan
         resultaat.features.map(function(feature) {
             // De regels aan de tabel toevoegen
-            $('#table tbody').append('<tr data-id="' + feature.id + '"><td>' + feature.id + '</td><td>' + feature.properties.projectnaam + '</td><td>' + feature.properties.url + '</td></tr')
+            $('#table tbody').append('<tr data-id="' + feature.properties.identificatie + '"><td>' + feature.properties.identificatie + '</td><td>' + feature.properties.status + '</td><td>' + feature.properties.gebruiksdoel + '</td></tr')
         });
     });
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
         // De feature id van de geklikte regel ophalen
         var id = $(this).attr('data-id');
         // URL van API 2
-        var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/108/domain/5/presentation/528/info/'
+        var url = 'https://acceptatie.kaartviewer.nl/admin/rest/openapi/bookmark/109/domain/5/presentation/535/info/'
         // De data via de url ophalen
         $.get( url + id, function( resultaat ) {
 
