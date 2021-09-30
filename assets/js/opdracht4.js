@@ -46,6 +46,7 @@ $(document).ready(function() {
     window.loadData = function (featureInfo, key = 0) {
 
         // Titel van de gekopelde formulier zetten
+        $('#modal-title-' + key).html(featureInfo.FormName)
 
         if(featureInfo.records.length > 0) {
             featureInfo.records[0].attributes.map(function (attributes) {
