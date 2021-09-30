@@ -3,7 +3,7 @@ $(document).ready(function() {
      * Deel 2
      */
 
-    var url = 'https://workshop.kaartviewer.nl/admin/rest/openapi/bookmark/20/domain/13/presentation/4/info?maxFeatures=10'
+    var url = 'OPENAPI'
     // // De data via de url ophalen
     $.get( url, function( resultaat ) {
     
@@ -11,7 +11,7 @@ $(document).ready(function() {
         resultaat.features.map(function(feature) {
 
             // De regels aan de tabel toevoegen
-            $('#table tbody').append('<tr data-id="' + feature.properties.identificatie + '"><td>' + '</td><td>' + '</td><td>' +  '</td></tr')
+            //$('#table tbody').append('<tr data-identificatie="' + '"><td>' + '</td><td>' +  '</td><td>' + '</td></tr')
         });
     });
 });

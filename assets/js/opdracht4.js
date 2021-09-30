@@ -6,11 +6,18 @@ $(document).ready(function() {
 
     // // Klik in de tabel
     $('#table').on('click', 'tr', function () {
+     
+        var identificatie = $(this).data('identificatie')
+
+        loadFeatureInfo(identificatie)
+    });
+
+    window.loadFeatureInfo = function (identificatie) {
+
         // URL van API 2
         var url = 'OPENAPI'
-        var id = $(this).data('id')
         // De data via de url ophalen
-        $.get( url + id, function( resultaat ) {
+        $.get( url + identificatie, function( resultaat ) {
 
             /**
              * Het resultaat bestaat uit de API die ook in KaartViewer wordt gebruikt
@@ -22,8 +29,7 @@ $(document).ready(function() {
              * 5.  attributes:  Lijst    de attributen die in het formulier zitten. In de attributen zit nog 1 extra diepte om ze achter elkaar te zetten.
              */
         });
-    });
-
+    }
     /**
      * Opdracht 2
      * @param featureInfo
@@ -38,7 +44,7 @@ $(document).ready(function() {
             featureInfo.records[0].attributes.map(function (attributes) {
                 attributes.map(function (attribute) {
                     // De regels aan de tabel toevoegen
-                    $('#modal-table-' + key + ' tbody').append('<tr><td>' +  '</td><td>' + '</td></tr')
+                    $('#modal-table-' + key + ' tbody').append('<tr><td>' + '</td><td>' + '</td></tr')
                 });
             });
         } else {
