@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css"/>
+
+    <!-- Extra stijl CSS -->
+    <link rel="stylesheet" href="assets/css/style.css"/>
 
     <title>Workshop KaartViewer API</title>
 </head>
@@ -13,16 +16,27 @@
     <nav class="navbar navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://kid2021.kaartviewer.nl/img/geonovation.png" class="d-inline-block align-top" alt="" width="200">
+                <img src="https://kid2021.kaartviewer.nl/img/geonovation.png" class="d-inline-block align-top" alt="" width="200"/>
             </a>
             <div class="navbar-text">Workshop KaartViewer API's</div>
         </div>
     </nav>
 
     <div class="container mt-2">
+        <div class="row" style="display: none">
+            <div class="col-6">
+                <div class="form-group row">
+                    <label for="autocomplete" class="col-sm-4 col-form-label">Adres zoeken:</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="country" id="autocomplete" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
-                <!-- https://getbootstrap.com/docs/4.0/content/tables/-->
+
+                <!-- https://getbootstrap.com/docs/4.0/content/tables/ -->
                 <table class="table" id="table">
                     <thead>
                         <tr>
@@ -31,14 +45,20 @@
                             <th>Kolom 3</th>
                         </tr>
                     </thead>
-                    <tbody style="cursor:pointer">
+                    <tbody>
+                        <tr>
+                            <td>Waarde 1</td>
+                            <td>Waarde 2</td>
+                            <td>Waarde 3</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- https://getbootstrap.com/docs/4.0/components/modal/ -->
+<!--   Deel 4 -->
+<!-- https://getbootstrap.com/docs/4.0/components/modal/ -->
     <div class="modal fade" id="modal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -46,8 +66,8 @@
                     <h5 class="modal-title" id="modal-presentation-title">Feature gegevens</h5>
                 </div>
                 <div class="modal-body" id="modal-body">
-                    <h5 id="modal-form-title"></h5>
-                    <table class="table" id="modal-table">
+                    <h5 id="modal-title-0"></h5>
+                    <table class="table" id="modal-table-0">
                         <thead>
                             <tr>
                                 <th>Weergavenaam</th>
@@ -57,8 +77,8 @@
                         <tbody>
                         </tbody>
                     </table>
-                    <h5 id="modal-form-title-linked"></h5>
-                    <table class="table" id="modal-table-linked">
+                    <h5 id="modal-title-1"></h5>
+                    <table class="table" id="modal-table-1">
                         <thead>
                         <tr>
                             <th>Weergavenaam</th>
@@ -68,8 +88,8 @@
                         <tbody>
                         </tbody>
                     </table>
-                    <h5 id="modal-form-title-linked-geometry"></h5>
-                    <table class="table" id="modal-table-linked-geometry">
+                    <h5 id="modal-title-2"></h5>
+                    <table class="table" id="modal-table-2">
                         <thead>
                         <tr>
                             <th>Weergavenaam</th>
@@ -86,6 +106,7 @@
             </div>
         </div>
     </div>
+<!--  Einde deel 4 -->
 
     <!-- Jquery js -->
     <script src="assets/libs/jquery/js/jquery.min.js"></script>
@@ -93,9 +114,12 @@
     <!-- Bootstrap js -->
     <script src="assets/libs/bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- Jquery Autocomplete js -->
+    <script src="assets/libs/jquery-autocomplete/js/jquery.autocomplete.min.js"></script>
+
     <!-- Workshop-->
-    <script src="assets/js/opdracht1.js"></script>
     <script src="assets/js/opdracht2.js"></script>
-    <script src="assets/js/opdracht3.js"></script>
+    <script src="assets/js/opdracht4.js"></script>
+    <script src="assets/js/opdracht5.js"></script>
 </body>
 </html>

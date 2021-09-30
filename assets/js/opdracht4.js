@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     /**
-     * Opdracht 3
+     * Deel 4
      */
 
     // // Klik in de tabel
@@ -19,6 +19,8 @@ $(document).ready(function() {
         // De data via de url ophalen
         $.get( url + identificatie, function( resultaat ) {
 
+            $('#modal-body tbody').html('')
+
             /**
              * Het resultaat bestaat uit de API die ook in KaartViewer wordt gebruikt
              * 1.  mainTabs:    Lijst    de presentaties die zijn geopend. Voor een WFS is dit altijd 1
@@ -28,6 +30,8 @@ $(document).ready(function() {
              * 4.  records:     Lijst    de (gekopelde) records die zijn gevonden. Voor een formulier van dezelfde presentatie is dit er altijd 1. Voor gekopelde data kan dit 1 of meer zijn
              * 5.  attributes:  Lijst    de attributen die in het formulier zitten. In de attributen zit nog 1 extra diepte om ze achter elkaar te zetten.
              */
+
+            loadData('featureInfo')
         });
     }
     /**
@@ -35,11 +39,10 @@ $(document).ready(function() {
      * @param featureInfo
      * @param key
      */
-    window.loadData = function (featureInfo, key) {
+    window.loadData = function (featureInfo, key = 0) {
 
         // Titel van de gekopelde formulier zetten
 
-        $('#modal-table-' + key + ' tbody').html('')
         if(featureInfo.records.length > 0) {
             featureInfo.records[0].attributes.map(function (attributes) {
                 attributes.map(function (attribute) {
