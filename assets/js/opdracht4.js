@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     /**
-     * Deel 4
+     * Opdracht 3
      */
 
     // // Klik in de tabel
@@ -15,7 +15,7 @@ $(document).ready(function() {
     window.loadFeatureInfo = function (identificatie) {
 
         // URL van API 2
-        var url = 'OPENAPI'
+        var url = 'https://workshop.kaartviewer.nl/admin/rest/openapi/bookmark/20/domain/13/presentation/4/info/'
         // De data via de url ophalen
         $.get( url + identificatie, function( resultaat ) {
 
@@ -31,7 +31,11 @@ $(document).ready(function() {
              * 5.  attributes:  Lijst    de attributen die in het formulier zitten. In de attributen zit nog 1 extra diepte om ze achter elkaar te zetten.
              */
 
-            loadData('featureInfo')
+            loadData(resultaat.mainTabs[0].features[0].featureInfo[0])
+            loadData(resultaat.mainTabs[0].features[0].featureInfo[1], 1)
+            loadData(resultaat.mainTabs[0].features[0].featureInfo[2], 2)
+
+            $('#modal').modal('show')
         });
     }
     /**
@@ -47,7 +51,7 @@ $(document).ready(function() {
             featureInfo.records[0].attributes.map(function (attributes) {
                 attributes.map(function (attribute) {
                     // De regels aan de tabel toevoegen
-                    $('#modal-table-' + key + ' tbody').append('<tr><td>' + '</td><td>' + '</td></tr')
+                    $('#modal-table-' + key + ' tbody').append('<tr><td>' + attribute.DisplayName + '</td><td>' + attribute.Value + '</td></tr')
                 });
             });
         } else {
