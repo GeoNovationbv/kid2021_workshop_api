@@ -6,8 +6,6 @@ $(document).ready(function() {
 
     $('#autocomplete').autocomplete({
         serviceUrl: 'OPENAPI',
-        dataType: "json",
-
         onSelect: function (response) {
 
             var id = response.data.id

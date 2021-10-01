@@ -6,7 +6,9 @@ $(document).ready(function() {
 
     // // Klik in de tabel
     $('#table').on('click', 'tr', function () {
-     
+
+        // alert('het klikken werkt')
+
         var identificatie = $(this).data('identificatie')
 
         loadFeatureInfo(identificatie)
@@ -42,12 +44,13 @@ $(document).ready(function() {
     window.loadData = function (featureInfo, key = 0) {
 
         // Titel van de gekopelde formulier zetten
+        // $('#modal-title-' + key).html(featureInfo.FormName)
 
         if(featureInfo.records.length > 0) {
             featureInfo.records[0].attributes.map(function (attributes) {
                 attributes.map(function (attribute) {
                     // De regels aan de tabel toevoegen
-                    $('#modal-table-' + key + ' tbody').append('<tr><td>' + '</td><td>' + '</td></tr')
+                    //$('#modal-table-' + key + ' tbody').append('<tr><td>' + '</td><td>' + '</td></tr')
                 });
             });
         } else {
