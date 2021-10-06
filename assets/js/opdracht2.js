@@ -5,9 +5,8 @@ $(document).ready(function() {
      */
 
     var url = 'OPENAPI'
-    // // De data via de url ophalen
     $.get( url, function( resultaat ) {
-    
+
         // Door alle resultaten heen gaan
         resultaat.features.map(function(feature) {
 
