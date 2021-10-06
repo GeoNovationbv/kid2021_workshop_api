@@ -33,7 +33,7 @@ $(document).ready(function() {
              * 5.  attributes:  Lijst    de attributen die in het formulier zitten. In de attributen zit nog 1 extra diepte om ze achter elkaar te zetten.
              */
 
-            // loadData('featureInfo')
+            // loadData(resultaat.mainTabs[0].features[0].featureInfo[0], 0)
         });
     }
     /**
