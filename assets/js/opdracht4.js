@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     /**
-     * Deel 4
+     * Opdracht 4
      */
 
     // // Klik in de tabel

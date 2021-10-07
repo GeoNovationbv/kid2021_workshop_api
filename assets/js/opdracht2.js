@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     /**
-     * Deel 2
+     * Opdracht 2
      */
 
     var url = 'OPENAPI'

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     /**
-     * Deel 5
+     * Opdracht 5
      */
 
     $('#autocomplete').autocomplete({
